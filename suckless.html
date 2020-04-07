@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-04-07 Tue 16:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to Install, Manage, backup and use suckless tools</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Ronnie Nissan" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">How to Install, Manage, backup and use suckless tools</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org9b5da5f">Introducation</a></li>
+<li><a href="#org3638d22">Installation</a>
+<ul>
+<li><a href="#orge13f2e4">dwm</a></li>
+<li><a href="#org925dce4">st</a></li>
+<li><a href="#org4785bad">dmenu</a></li>
+</ul>
+</li>
+<li><a href="#org0d07fa8">configuration</a>
+<ul>
+<li><a href="#org23d2f22">dwm</a>
+<ul>
+<li><a href="#orgd5df917">Font and Colorscheme</a></li>
+<li><a href="#org7433f75">The rules</a></li>
+<li><a href="#orgfee2921">Key bindings</a></li>
+</ul>
+</li>
+<li><a href="#orgc01ff86">st</a>
+<ul>
+<li><a href="#orgb1b38ea">Font and Padding</a></li>
+<li><a href="#org9f3f307">Colorscheme</a></li>
+<li><a href="#org6eb0e3b">Cursor Shape</a></li>
+</ul>
+</li>
+<li><a href="#org908a3a9">dmenu</a>
+<ul>
+<li><a href="#org8325bbc">Font and colorscheme</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org308e7ce">Patching</a></li>
+<li><a href="#org2cf3099">Backup</a></li>
+<li><a href="#orgf8f4a59">Conculosion</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9b5da5f" class="outline-2">
+<h2 id="org9b5da5f">Introducation</h2>
+<div class="outline-text-2" id="text-org9b5da5f">
+<p>
+The suckless tools, especially dwm, st and dmenu, are some very amazing pieces
+of software, that allow a great flixability while being very minimal. But they
+come at a cost, yes, libre software is free as both in freedome and as in beer
+(most) of time), but you should make an effort to be able to use it, and that effort
+(cost) is much needed when it comes to the sucklees tools.
+</p>
+
+<p>
+I used dwm, st and dmenu about a year ago, but I had no idea how to manage and
+backup them, I didn&rsquo;t know alot about customizing (patching) them, but recently
+I started learining C programing language, and so I decided to use all three, as
+I will have to edit the source code to make any changes and so this will help me
+in my endavor of learning C.
+</p>
+
+<p>
+The resone I am making this toturial is to help you get started with using dwm,
+st and dmenu too. This tuturial is my own personal experiencve and knowledge and
+has no connection to the guys at suckless, nor it is the best how-to guide.
+</p>
+
+<p>
+This tuturial will assume you have a basic knwoledge in linux and
+you are able to install packages though your distroes package manager and solve
+dependencies, and that you use xinit to login to your xorg-session.
+</p>
+
+<p>
+Hope you&rsquo;ll enjoy it and learn something from it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3638d22" class="outline-2">
+<h2 id="org3638d22">Installation</h2>
+<div class="outline-text-2" id="text-org3638d22">
+<p>
+to install any of the above three, you&rsquo;ll need to have a few libraries and git installed in your system, you
+can install them with
+</p>
+
+<p>
+On void Linux
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">sudo</span> xbps-install -S <span style="color: #8FBCBB;">git</span> <span style="color: #8FBCBB;">make</span> libX11-devel libXinerama-devel
+</pre>
+</div>
+
+<p>
+on Debian and Debian based distroes
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">sudo</span> apt-get install build-essential libx11-dev libxinerama-dev sharutils
+</pre>
+</div>
+
+<p>
+and on Arch and arch based distroes
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">sudo</span> pacman -S <span style="color: #8FBCBB;">git</span> <span style="color: #8FBCBB;">make</span> libX11-devel libXinerama-devel
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orge13f2e4" class="outline-3">
+<h3 id="orge13f2e4">dwm</h3>
+<div class="outline-text-3" id="text-orge13f2e4">
+<p>
+Clone dwm from suckless.org
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> clone <span style="color: #8FBCBB;">git</span> clone https://git.suckless.org/dwm
+</pre>
+</div>
+
+<p>
+then
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">cd</span> dwm/
+<span style="color: #8FBCBB;">make</span>
+<span style="color: #8FBCBB;">sudo</span> <span style="color: #8FBCBB;">make</span> install
+</pre>
+</div>
+
+<p>
+then all that&rsquo;s left is that you put the following to your .xinitrc and then startx
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #81A1C1;">exec</span> dwm
+</pre>
+</div>
+
+<p>
+This will give you an untouched dwm experiance like the guys at suckless
+intended it.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org925dce4" class="outline-3">
+<h3 id="org925dce4">st</h3>
+<div class="outline-text-3" id="text-org925dce4">
+<p>
+clone st from suckless.org
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> clone https://git.suckless.org/st
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">cd</span> st/
+<span style="color: #8FBCBB;">make</span>
+<span style="color: #8FBCBB;">sudo</span> <span style="color: #8FBCBB;">make</span> install
+</pre>
+</div>
+
+<p>
+and this will install st, unmodified, on your system. Just note that st doesn&rsquo;t
+have a .desktop file by default, which means you will not find it in menus (like dmenu)
+whoever, st it is the default terminal in dwm and it is binded to ALT + Shift +
+Return.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4785bad" class="outline-3">
+<h3 id="org4785bad">dmenu</h3>
+<div class="outline-text-3" id="text-org4785bad">
+<p>
+clone dmenu from suckless.org
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> clone https://git.suckless.org/dmenu
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">cd</span> st/
+<span style="color: #8FBCBB;">make</span>
+<span style="color: #8FBCBB;">sudo</span> <span style="color: #8FBCBB;">make</span> install
+</pre>
+</div>
+
+<p>
+now dmenu is installed on on your system, in dwm, alt + p is binded to launching
+dmenu.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0d07fa8" class="outline-2">
+<h2 id="org0d07fa8">configuration</h2>
+<div class="outline-text-2" id="text-org0d07fa8">
+<p>
+by now you should have a working (in the suckless philosophy way) system, but
+maybe you want to edit some colors, add some features through patching those
+programs to make them even more usable, or just more pleasing to look at.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org3927be5"></a>NOTE: it is recommended that you make a copy of config.def.h file and name it config.h and make your edits to this file, so that when you update dwm for example you get the new config.def.h it will not overwrite your modefications, whoever I don&rsquo;t do that, I edit config.def.h and config.h is generated automatically when you compile and install. this way when a patch edited config.def.h, I can just delete config.h and recompile.<br /></li>
+</ul>
+
+<div id="outline-container-org23d2f22" class="outline-3">
+<h3 id="org23d2f22">dwm</h3>
+<div class="outline-text-3" id="text-org23d2f22">
+<p>
+to edit dwm, you&rsquo;ll have to cd into the dwm directory and edit config.def.h,
+remember to remove the config.h file before recompiling (see
+note above). and here I&rsquo;ll explain some parts of the config file.
+</p>
+</div>
+
+<div id="outline-container-orgd5df917" class="outline-4">
+<h4 id="orgd5df917">Font and Colorscheme</h4>
+<div class="outline-text-4" id="text-orgd5df917">
+<p>
+In lines 8 and 9 you can set the font, and font size of dwm, and also dmenu if
+you don&rsquo;t want to edit your dmenu instalation and launch it though the dwm
+defined flags on line 59.
+</p>
+
+<p>
+From line 10 to line 19 in your config.h file, you&rsquo;ll see the following
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray1</span>[]       = <span style="color: #A3BE8C;">"#222222"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray2</span>[]       = <span style="color: #A3BE8C;">"#444444"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray3</span>[]       = <span style="color: #A3BE8C;">"#bbbbbb"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray4</span>[]       = <span style="color: #A3BE8C;">"#eeeeee"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_cyan</span>[]        = <span style="color: #A3BE8C;">"#005577"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">colors</span>[][<span style="color: #B48EAD; font-weight: bold;">3</span>]      = {
+        <span style="color: #6f7787;">/*               </span><span style="color: #6f7787;">fg         bg         border   </span><span style="color: #6f7787;">*/</span>
+        [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+        [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+     };
+</pre>
+</div>
+
+<p>
+in the lines from 10 to 15 you&rsquo;ll see some constants of type character defined. they are six
+colors, which you can change to whatever you like, you can also change the names
+of the constants for example
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">    <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">normalbg</span>[]       = <span style="color: #A3BE8C;">"#0ff000"</span>;
+</pre>
+</div>
+
+<p>
+then on line 17 and 18 we are setting the defined constants to the element we
+want which are are SchemeNorm and Schemesel from the *colors constant, the first color is the forground
+(fg) second is the background (bg) and the third is border color. Edit those to
+your liking then recompile, install and exit and log back into dwm to see your
+changes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7433f75" class="outline-4">
+<h4 id="org7433f75">The rules</h4>
+<div class="outline-text-4" id="text-org7433f75">
+<p>
+from line 30 to 31 you&rsquo;ll see some rules set for gimp and firefox
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">    <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">class      instance    title       tags mask     isfloating   monitor </span><span style="color: #6f7787;">*/</span>
+        { <span style="color: #A3BE8C;">"Gimp"</span>,     <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">0</span>,            <span style="color: #B48EAD; font-weight: bold;">1</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> },
+        { <span style="color: #A3BE8C;">"Firefox"</span>,  <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">1</span> &lt;&lt; <span style="color: #B48EAD; font-weight: bold;">8</span>,       <span style="color: #B48EAD; font-weight: bold;">0</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> },
+</pre>
+</div>
+
+<p>
+you can rules for over programs and remove the ones set as you like, what you
+need to know is, the class of the program using xprop. and writing it under
+&ldquo;class&rdquo;, keeping both &ldquo;instance&rdquo; and &ldquo;title&rdquo; as NULL (most of the time) if you set
+&ldquo;isfloating&rdquo; to 1, the pragram will spawn in floating mode, and under &ldquo;monitor&rdquo; you
+set which monitor the program will spawn on.
+</p>
+
+<p>
+it&rsquo;s the &ldquo;tags mask&rdquo; that is a bit tricky. but it is very easy ones you know
+what you are doing. they are bitwise operatores (which I myself don&rsquo;t fully understand to be honest)
+</p>
+
+<p>
+but if all you want to do is spawn firefox on the ninth tag (default behavior)
+</p>
+
+<p>
+you&rsquo;ll have to set tag mask to &ldquo;1 &lt;&lt; 8&rdquo; which means 1 shifted to the right by 8,
+which makes it 9. so the tags by default are &ldquo;000000001&rdquo;, when the 1 is in the
+rightmost possition (the ninth from left to right) you are on tag 1, so what &ldquo;1
+&lt;&lt; 8&rdquo; means is to put the &ldquo;1&rdquo; in the leftmost positon 100000000 (first position from
+left), which is tag nine.
+</p>
+
+<p>
+If you want emacs for example to open on tag 3 and in floating mode you&rsquo;ll add
+this line to the above code
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">{ <span style="color: #A3BE8C;">"Emacs"</span>,     <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">1</span> &lt;&lt; <span style="color: #B48EAD; font-weight: bold;">2</span>,            <span style="color: #B48EAD; font-weight: bold;">1</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> },
+</pre>
+</div>
+
+<p>
+which tarnsaltes to 000000100.
+</p>
+
+<p>
+If you want to learn more about tag masks, check <a href="https:https://dwm.suckless.org/customisation/tagmask/">How does a tag-mask work?</a> over
+at suckless.org
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfee2921" class="outline-4">
+<h4 id="orgfee2921">Key bindings</h4>
+<div class="outline-text-4" id="text-orgfee2921">
+<p>
+I will not cover key bindings because I use sxhkd for custom keybindings, but if
+you want to use dwm key damon or you just want to edit a few of the defaly a
+look at the config from line 46 to line 96 help you as it is self explanatory.
+</p>
+
+<p>
+if you want to change the mod key from alt to super key, you can edit line 47
+and it from Mod1Mask to Mod4Mask.
+</p>
+
+<p>
+This is more than enough to get you a costumized dwm and you can start living in
+it from this point, but if you want to learn how to patch it, go to the &ldquo;Patching&rdquo;
+section of this page.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc01ff86" class="outline-3">
+<h3 id="orgc01ff86">st</h3>
+<div class="outline-text-3" id="text-orgc01ff86">
+<p>
+The simple Terminal is amazing, very fast and has the best font rendering
+(second only to Alacritty) in my opinion. but it lacks some basic
+functionalitty by default which I&rsquo;ll address under the &ldquo;Patching&rdquo; section.
+but for Just changing some of the default bindings and color schemes, you&rsquo;ll
+do the same as you did with dwm, go to the st directory, and edit the
+config.def.h file, remove the config.h file and recompile.
+</p>
+</div>
+
+<div id="outline-container-orgb1b38ea" class="outline-4">
+<h4 id="orgb1b38ea">Font and Padding</h4>
+<div class="outline-text-4" id="text-orgb1b38ea">
+<p>
+To edit the font and the padding you&rsquo;ll have to edit line 8 and 9, to set
+the font to Hack and size to 14, and set padding to 8, you&rsquo;ll do the following
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">    <span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">font</span> = <span style="color: #A3BE8C;">"Hack:pixelsize=14:antialias=true:autohint=true"</span>;
+    <span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">int</span> <span style="color: #d9c6d6;">borderpx</span> = <span style="color: #B48EAD; font-weight: bold;">8</span>;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9f3f307" class="outline-4">
+<h4 id="org9f3f307">Colorscheme</h4>
+<div class="outline-text-4" id="text-org9f3f307">
+<p>
+To change st&rsquo;s default colorscheme you&rsquo;ll have to edit Lines 86 to 112
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #6f7787;">/* </span><span style="color: #6f7787;">Terminal colors (16 first used in escape sequence) </span><span style="color: #6f7787;">*/</span>
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">colorname</span>[] = {
+        <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">8 normal colors </span><span style="color: #6f7787;">*/</span>
+        <span style="color: #A3BE8C;">"black"</span>,
+        <span style="color: #A3BE8C;">"red3"</span>,
+        <span style="color: #A3BE8C;">"green3"</span>,
+        <span style="color: #A3BE8C;">"yellow3"</span>,
+        <span style="color: #A3BE8C;">"blue2"</span>,
+        <span style="color: #A3BE8C;">"magenta3"</span>,
+        <span style="color: #A3BE8C;">"cyan3"</span>,
+        <span style="color: #A3BE8C;">"gray90"</span>,
+
+        <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">8 bright colors </span><span style="color: #6f7787;">*/</span>
+        <span style="color: #A3BE8C;">"gray50"</span>,
+        <span style="color: #A3BE8C;">"red"</span>,
+        <span style="color: #A3BE8C;">"green"</span>,
+        <span style="color: #A3BE8C;">"yellow"</span>,
+        <span style="color: #A3BE8C;">"#5c5cff"</span>,
+        <span style="color: #A3BE8C;">"magenta"</span>,
+        <span style="color: #A3BE8C;">"cyan"</span>,
+        <span style="color: #A3BE8C;">"white"</span>,
+
+        [<span style="color: #B48EAD; font-weight: bold;">255</span>] = <span style="color: #B48EAD; font-weight: bold;">0</span>,
+
+        <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">more colors can be added after 255 to use with DefaultXX </span><span style="color: #6f7787;">*/</span>
+        <span style="color: #A3BE8C;">"#cccccc"</span>,
+        <span style="color: #A3BE8C;">"#555555"</span>,
+     };
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6eb0e3b" class="outline-4">
+<h4 id="org6eb0e3b">Cursor Shape</h4>
+<div class="outline-text-4" id="text-org6eb0e3b">
+<p>
+St have four cursor shapes defined by default:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">  * Default shape of cursor
+      * <span style="color: #B48EAD; font-weight: bold;">2</span>: Block (<span style="color: #A3BE8C;">"&#9608;"</span>)
+      * <span style="color: #B48EAD; font-weight: bold;">4</span>: Underline (<span style="color: #A3BE8C;">"_"</span>)
+      * <span style="color: #B48EAD; font-weight: bold;">6</span>: Bar (<span style="color: #A3BE8C;">"|"</span>)
+      * <span style="color: #B48EAD; font-weight: bold;">7</span>: Snowman (<span style="color: #A3BE8C;">"&#9731;"</span>)
+</pre>
+</div>
+
+<p>
+to change the cursor to any of the above you&rsquo;ll edited line 131 and set it to
+the number corsponding to the shape you want.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">unsigned</span> <span style="color: #8FBCBB;">int</span> <span style="color: #d9c6d6;">cursorshape</span> = <span style="color: #B48EAD; font-weight: bold;">2</span>;
+</pre>
+</div>
+
+<p>
+This is the based customisation that you can do to st, to make it more
+pleasing to look it.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org908a3a9" class="outline-3">
+<h3 id="org908a3a9">dmenu</h3>
+<div class="outline-text-3" id="text-org908a3a9">
+<p>
+You costumize dmenu the same way you did st and dwm, by editing the
+config.def.h, removing config.h and recompiling.
+</p>
+
+<p>
+dmenu is a very flixable and very simple program that you can do alot with, I
+use it to set my wallapper, change my monitor layout, as a powermenu etc. You
+can pipe things into dmenu and paste the output to stdout. which makes it very
+extensable though scripting.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org312d09c"></a>Note, please remember that if you want to use your own build of dmenu, you&rsquo;ll<br />
+<div class="outline-text-5" id="text-org312d09c">
+<p>
+have to remove some things from dwm, the things to be removed from config.def.h
+of dwm are the folowing
+</p>
+
+<p>
+In line 59, everyhting between &lt;&gt; should be removed
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">dmenucmd</span>[] = { <span style="color: #A3BE8C;">"dmenu_run"</span>, <span style="color: #A3BE8C;">"-m"</span>, dmenumon, &lt;<span style="color: #A3BE8C;">"-fn"</span>, dmenufont, <span style="color: #A3BE8C;">"-nb"</span>, col_gray1,
+                                  <span style="color: #A3BE8C;">"-nf"</span>, col_gray3, <span style="color: #A3BE8C;">"-sb"</span>, col_cyan, <span style="color: #A3BE8C;">"-sf"</span>, col_gray4,&gt; <span style="color: #B48EAD;">NULL</span> };
+</pre>
+</div>
+</div>
+</li>
+</ul>
+
+<div id="outline-container-org8325bbc" class="outline-4">
+<h4 id="org8325bbc">Font and colorscheme</h4>
+<div class="outline-text-4" id="text-org8325bbc">
+<p>
+to change the font on dmenu you should edit line 7 and set it to the font you
+want
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">        <span style="color: #A3BE8C;">"monospace:size=10"</span>
+</pre>
+</div>
+
+
+<p>
+to change the colorscheme, it&rsquo;s the same as in dwm, but here we sit the colors
+inside the *colors cosntant directly.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">        [SchemeNorm] = { <span style="color: #A3BE8C;">"#bbbbbb"</span>, <span style="color: #A3BE8C;">"#222222"</span> },
+        [SchemeSel] = { <span style="color: #A3BE8C;">"#eeeeee"</span>, <span style="color: #A3BE8C;">"#005577"</span> },
+        [SchemeOut] = { <span style="color: #A3BE8C;">"#000000"</span>, <span style="color: #A3BE8C;">"#00ffff"</span> },
+</pre>
+</div>
+
+<p>
+first one is the foreground and the second one is the background.
+first line is for the Normal enteries and second line for the selected enteries.
+</p>
+
+<p>
+If you want to watch a good video about dmenu, I recommed that you watching <a href="https:https://www.youtube.com/watch?v=R9m723tAurA">Luke
+Smith&rsquo;s</a> video on it.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org308e7ce" class="outline-2">
+<h2 id="org308e7ce">Patching</h2>
+<div class="outline-text-2" id="text-org308e7ce">
+<p>
+Patching is how you extend the suckless tools with features they lack out of
+the box that either make them more usuable or enhance the look and feel of them,
+Like adding the ability of scroll back in st and gaps in dwm.
+</p>
+
+<p>
+to apply a patch you must go to suckless.org first. download the patch you want
+to apply to the sourcecode directory of the software you want to apply it to.
+</p>
+
+<p>
+then you&rsquo;ll do the following.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">sudo</span> <span style="color: #8FBCBB;">make</span> clean
+<span style="color: #8FBCBB;">git</span> remove config.h
+<span style="color: #8FBCBB;">git</span> branch &lt;name of the patch&gt;.def
+<span style="color: #8FBCBB;">git</span> checkout &lt;name of the new branch&gt;
+patch -p1 &lt; &lt;name of the patch&gt;
+</pre>
+</div>
+
+<p>
+at this point, if all the hunks were sucssesful, you will do;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> status <span style="color: #6f7787;">#</span><span style="color: #6f7787;">and check which files were modified, then do</span>
+<span style="color: #8FBCBB;">git</span> add &lt;names of the modified files&gt;
+<span style="color: #8FBCBB;">git</span> commit -m &lt;enter a of what you are commiting here&gt;
+</pre>
+</div>
+
+<p>
+Then do
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> checkout master
+<span style="color: #8FBCBB;">git</span> merge &lt;name of the new branch&gt;
+<span style="color: #8FBCBB;">make</span>
+<span style="color: #8FBCBB;">sudo</span> <span style="color: #8FBCBB;">make</span> install
+</pre>
+</div>
+
+<p>
+If one or more hunks fails, you&rsquo;ll have to look into the terminal to see which
+file (or files) was it that the hunks failed to apply to, and you&rsquo;ll see inside
+the source code you&rsquo;ll have a file called, &lt;name of the file&gt;.&lt;extension&gt;.rej
+</p>
+
+<p>
+so now all you have to do is, open the .rej file in your favorite text editor,
+look for the lines that have &ldquo;-&rdquo; (remove) and &ldquo;+&rdquo; (add) right to them, those are the lines you
+haev to remove and add. then you&rsquo;ll do the above steps.
+</p>
+
+<p>
+if you want to remove a patch you&rsquo;ve applied you haev to does
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">patch -R &lt; &lt;name of the patch&gt;.def
+</pre>
+</div>
+
+<p>
+If you want to learn more about patches check out the <a href="https:https://suckless.org/hacking/">Hacking</a> page from
+suckless.org and you can also watch DistroTube&rsquo;s video on <a href="https:https://www.youtube.com/watch?v=bBJ0qxqzlxk">Patching dmenu</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2cf3099" class="outline-2">
+<h2 id="org2cf3099">Backup</h2>
+<div class="outline-text-2" id="text-org2cf3099">
+<p>
+If you cutmized any of the suckless tools to your liking, then you know it
+is not as easy as editing a config file. espessially after you patch them. So
+keeping a backup of them is not as easy as saving a dotfile to a git repository
+and linking it to .config/&lt;name or program&gt;. and here I&rsquo;ll show you the steps to
+make a backup of your suckless tools while still having the abillity to update
+them when a new version comes out (which doesn&rsquo;t happen that often).
+</p>
+
+<p>
+first of all you have to be in the directory of the program you want to make a
+backup of. then you&rsquo;ll rename the remote of the git repository from origin to upstream.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> remote rename origin upstream
+</pre>
+</div>
+
+<p>
+then you&rsquo;ll go to github.com (or gitlab) and make a new repository, call it the
+same as the program you are backing up for conviniance. then copy the
+repository&rsquo;s url and do
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> add remote origin &lt;the repository<span style="color: #A3BE8C;">'s url&gt;</span>
+</pre>
+</div>
+
+<p>
+now if you do
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> remote -v
+</pre>
+</div>
+
+<p>
+You&rsquo;ll se that you have two remotes called upstream (pointing to suckless.org)
+and one called origin (pointing to your repository). now all that&rsquo;s left is that
+you push your build to the master branch of your repository, to do that you do.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> push origin master
+</pre>
+</div>
+
+<p>
+if the guys at suckless updated the program, all you&rsquo;ll have to do is, go to
+that programs directory, and run the follwoing
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> pull upstream master
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf8f4a59" class="outline-2">
+<h2 id="orgf8f4a59">Conculosion</h2>
+<div class="outline-text-2" id="text-orgf8f4a59">
+<p>
+I think by now you can get around using the suckless tools with ease, custmize
+them and back them up. which is really amazing because the suckless tools are
+amazing.
+</p>
+
+<p>
+Later I&rsquo;ll be posting more articles explaining how to coustmize dwm&rsquo;s bar and
+how to use sxhkd as your key damon.
+</p>
+
+<p>
+I really hope that you enjoyed this read and that it was usefull to you.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 5/4/2020</p>
+<p class="author">Author: Ronnie Nissan</p>
+<p class="date">Created: 2020-04-07 Tue 16:18</p>
+</div>
+</body>
+</html>
