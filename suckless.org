@@ -3,8 +3,8 @@
 #+OPTIONS: html-style:nil
 #+TITLE: How to Install, Manage, backup and use suckless tools
 #+AuTHOR: Ronnie Nissan
-#+DATE: 5/4/2020
-#+OPtions: num:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:1
 
 * Introducation
 
