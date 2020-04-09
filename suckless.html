@@ -4,7 +4,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-08 Wed 02:53 -->
+<!-- 2020-04-09 Thu 23:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>How to Install, Manage, backup and use suckless tools</title>
@@ -37,33 +37,28 @@
 </script>
 </head>
 <body>
-
-<div id="main_wrap">
+<div id="content">
+<h1 class="title">How to Install, Manage, backup and use suckless tools</h1>
 <div id="table-of-contents">
-<h2 class="table">Table of Contents</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7996e6a">Introducation</a></li>
-<li><a href="#orgbf8523a">Installation</a></li>
-<li><a href="#orgea85c09">configuration</a></li>
-<li><a href="#orge0e815b">Patching</a></li>
-<li><a href="#org1c97e05">Backup</a></li>
-<li><a href="#org1a56d84">Conclusion</a></li>
+<li><a href="#org47ffebc">Introducation</a></li>
+<li><a href="#org5d5a66e">Installation</a></li>
+<li><a href="#orgfcb0133">configuration</a></li>
+<li><a href="#org792b58c">Patching</a></li>
+<li><a href="#orgde39a53">Backup</a></li>
 </ul>
 </div>
 </div>
 
-<div id="content">
-<h1 class="title">How to Install, Manage, backup and use suckless tools</h1>
-
-
-<div id="outline-container-org7996e6a" class="outline-2">
-<h2 id="org7996e6a">Introducation</h2>
-<div class="outline-text-2" id="text-org7996e6a">
+<div id="outline-container-org47ffebc" class="outline-2">
+<h2 id="org47ffebc">Introducation</h2>
+<div class="outline-text-2" id="text-org47ffebc">
 <p>
 The suckless tools, especially dwm, st and dmenu, are some very amazing pieces
 of software, that allow a great flixability while being very minimal. But they
-come at a cost, yes, libre software is free as both in freedome and as in beer
+come at a cost, yes, libre software is free as both in freedom and as in beer
 (most) of time), but you should make an effort to be able to use it, and that effort
 (cost) is much needed when it comes to the sucklees tools.
 </p>
@@ -94,9 +89,9 @@ Hope you&rsquo;ll enjoy it and learn something from it.
 </div>
 </div>
 
-<div id="outline-container-orgbf8523a" class="outline-2">
-<h2 id="orgbf8523a">Installation</h2>
-<div class="outline-text-2" id="text-orgbf8523a">
+<div id="outline-container-org5d5a66e" class="outline-2">
+<h2 id="org5d5a66e">Installation</h2>
+<div class="outline-text-2" id="text-org5d5a66e">
 <p>
 to install any of the above three, you&rsquo;ll need to have a few libraries and git installed in your system, you
 can install them with
@@ -125,21 +120,21 @@ and on Arch and arch based distroes
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #8FBCBB;">sudo</span> pacman -S <span style="color: #8FBCBB;">git</span> <span style="color: #8FBCBB;">make</span> libX11-devel libXinerama-devel
+<pre class="src src-shell"><span style="color: #8FBCBB;">sudo</span> pacman -S <span style="color: #8FBCBB;">git</span> <span style="color: #8FBCBB;">make</span> libX11-devel libXinerama-devel 
 </pre>
 </div>
 </div>
 
 
-<div id="outline-container-orgc1a1c4a" class="outline-3">
-<h3 id="orgc1a1c4a">dwm</h3>
-<div class="outline-text-3" id="text-orgc1a1c4a">
+<div id="outline-container-org53f5a72" class="outline-3">
+<h3 id="org53f5a72">dwm</h3>
+<div class="outline-text-3" id="text-org53f5a72">
 <p>
 Clone dwm from suckless.org
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> clone <span style="color: #8FBCBB;">git</span> clone https://git.suckless.org/dwm
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> clone <span style="color: #8FBCBB;">git</span> clone https://git.suckless.org/dwm 
 </pre>
 </div>
 
@@ -171,9 +166,9 @@ intended it.
 </div>
 
 
-<div id="outline-container-orgdfa67c2" class="outline-3">
-<h3 id="orgdfa67c2">st</h3>
-<div class="outline-text-3" id="text-orgdfa67c2">
+<div id="outline-container-orgdd43e33" class="outline-3">
+<h3 id="orgdd43e33">st</h3>
+<div class="outline-text-3" id="text-orgdd43e33">
 <p>
 clone st from suckless.org
 </p>
@@ -199,9 +194,9 @@ Return.
 </div>
 </div>
 
-<div id="outline-container-org29836b2" class="outline-3">
-<h3 id="org29836b2">dmenu</h3>
-<div class="outline-text-3" id="text-org29836b2">
+<div id="outline-container-org6237206" class="outline-3">
+<h3 id="org6237206">dmenu</h3>
+<div class="outline-text-3" id="text-org6237206">
 <p>
 clone dmenu from suckless.org
 </p>
@@ -226,9 +221,9 @@ dmenu.
 </div>
 </div>
 
-<div id="outline-container-orgea85c09" class="outline-2">
-<h2 id="orgea85c09">configuration</h2>
-<div class="outline-text-2" id="text-orgea85c09">
+<div id="outline-container-orgfcb0133" class="outline-2">
+<h2 id="orgfcb0133">configuration</h2>
+<div class="outline-text-2" id="text-orgfcb0133">
 <p>
 by now you should have a working (in the suckless philosophy way) system, but
 maybe you want to edit some colors, add some features through patching those
@@ -237,12 +232,12 @@ programs to make them even more usable, or just more pleasing to look at.
 </div>
 
 <ul class="org-ul">
-<li><a id="org0d8800c"></a>NOTE: it is recommended that you make a copy of config.def.h file and name it config.h and make your edits to this file, so that when you update dwm for example you get the new config.def.h it will not overwrite your modefications, whoever I don&rsquo;t do that, I edit config.def.h and config.h is generated automatically when you compile and install. this way when a patch edited config.def.h, I can just delete config.h and recompile.<br /></li>
+<li><a id="org04b3053"></a>NOTE: it is recommended that you make a copy of config.def.h file and name it config.h and make your edits to this file, so that when you update dwm for example you get the new config.def.h it will not overwrite your modefications, whoever I don&rsquo;t do that, I edit config.def.h and config.h is generated automatically when you compile and install. this way when a patch edited config.def.h, I can just delete config.h and recompile.<br /></li>
 </ul>
 
-<div id="outline-container-org147a9ea" class="outline-3">
-<h3 id="org147a9ea">dwm</h3>
-<div class="outline-text-3" id="text-org147a9ea">
+<div id="outline-container-orga69a8c7" class="outline-3">
+<h3 id="orga69a8c7">dwm</h3>
+<div class="outline-text-3" id="text-orga69a8c7">
 <p>
 to edit dwm, you&rsquo;ll have to cd into the dwm directory and edit config.def.h,
 remember to remove the config.h file before recompiling (see
@@ -250,9 +245,9 @@ note above). and here I&rsquo;ll explain some parts of the config file.
 </p>
 </div>
 
-<div id="outline-container-org7a8ae7b" class="outline-4">
-<h4 id="org7a8ae7b">Font and Colorscheme</h4>
-<div class="outline-text-4" id="text-org7a8ae7b">
+<div id="outline-container-orgd4f7577" class="outline-4">
+<h4 id="orgd4f7577">Font and Colorscheme</h4>
+<div class="outline-text-4" id="text-orgd4f7577">
 <p>
 In lines 8 and 9 you can set the font, and font size of dwm, and also dmenu if
 you don&rsquo;t want to edit your dmenu instalation and launch it though the dwm
@@ -264,16 +259,16 @@ From line 10 to line 19 in your config.h file, you&rsquo;ll see the following
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c">     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray1</span>[]       = <span style="color: #A3BE8C;">"#222222"</span>;
-     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray2</span>[]       = <span style="color: #A3BE8C;">"#444444"</span>;
-     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray3</span>[]       = <span style="color: #A3BE8C;">"#bbbbbb"</span>;
-     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray4</span>[]       = <span style="color: #A3BE8C;">"#eeeeee"</span>;
-     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_cyan</span>[]        = <span style="color: #A3BE8C;">"#005577"</span>;
-     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">colors</span>[][<span style="color: #B48EAD; font-weight: bold;">3</span>]      = {
+<pre class="src src-c">     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray1</span><span style="color: #81A1C1;">[]</span>       = <span style="color: #A3BE8C;">"#222222"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray2</span><span style="color: #81A1C1;">[]</span>       = <span style="color: #A3BE8C;">"#444444"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray3</span><span style="color: #81A1C1;">[]</span>       = <span style="color: #A3BE8C;">"#bbbbbb"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_gray4</span><span style="color: #81A1C1;">[]</span>       = <span style="color: #A3BE8C;">"#eeeeee"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">col_cyan</span><span style="color: #81A1C1;">[]</span>        = <span style="color: #A3BE8C;">"#005577"</span>;
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">colors</span><span style="color: #81A1C1;">[][</span><span style="color: #B48EAD; font-weight: bold;">3</span><span style="color: #81A1C1;">]</span>      = <span style="color: #81A1C1;">{</span>
         <span style="color: #6f7787;">/*               </span><span style="color: #6f7787;">fg         bg         border   </span><span style="color: #6f7787;">*/</span>
-        [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-        [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-     };
+        <span style="color: #B48EAD;">[</span>SchemeNorm<span style="color: #B48EAD;">]</span> = <span style="color: #B48EAD;">{</span> col_gray3, col_gray1, col_gray2 <span style="color: #B48EAD;">}</span>,
+        <span style="color: #B48EAD;">[</span>SchemeSel<span style="color: #B48EAD;">]</span>  = <span style="color: #B48EAD;">{</span> col_gray4, col_cyan,  col_cyan  <span style="color: #B48EAD;">}</span>, 
+     <span style="color: #81A1C1;">}</span>;
 </pre>
 </div>
 
@@ -284,13 +279,13 @@ of the constants for example
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c">    <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">normalbg</span>[]       = <span style="color: #A3BE8C;">"#0ff000"</span>;
+<pre class="src src-c">    <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> <span style="color: #d9c6d6;">normalbg</span><span style="color: #81A1C1;">[]</span>       = <span style="color: #A3BE8C;">"#0ff000"</span>; 
 </pre>
 </div>
 
 <p>
 then on line 17 and 18 we are setting the defined constants to the element we
-want which are are SchemeNorm and Schemesel from the *colors constant, the first color is the forground
+want which are SchemeNorm and Schemesel from the *colors constant, the first color is the forground
 (fg) second is the background (bg) and the third is border color. Edit those to
 your liking then recompile, install and exit and log back into dwm to see your
 changes.
@@ -298,17 +293,17 @@ changes.
 </div>
 </div>
 
-<div id="outline-container-org53b5780" class="outline-4">
-<h4 id="org53b5780">The rules</h4>
-<div class="outline-text-4" id="text-org53b5780">
+<div id="outline-container-org56015f7" class="outline-4">
+<h4 id="org56015f7">The rules</h4>
+<div class="outline-text-4" id="text-org56015f7">
 <p>
 from line 30 to 31 you&rsquo;ll see some rules set for gimp and firefox
 </p>
 
 <div class="org-src-container">
 <pre class="src src-c">    <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">class      instance    title       tags mask     isfloating   monitor </span><span style="color: #6f7787;">*/</span>
-        { <span style="color: #A3BE8C;">"Gimp"</span>,     <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">0</span>,            <span style="color: #B48EAD; font-weight: bold;">1</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> },
-        { <span style="color: #A3BE8C;">"Firefox"</span>,  <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">1</span> &lt;&lt; <span style="color: #B48EAD; font-weight: bold;">8</span>,       <span style="color: #B48EAD; font-weight: bold;">0</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> },
+        <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"Gimp"</span>,     <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">0</span>,            <span style="color: #B48EAD; font-weight: bold;">1</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> <span style="color: #81A1C1;">}</span>,
+        <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"Firefox"</span>,  <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">1</span> &lt;&lt; <span style="color: #B48EAD; font-weight: bold;">8</span>,       <span style="color: #B48EAD; font-weight: bold;">0</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> <span style="color: #81A1C1;">}</span>, 
 </pre>
 </div>
 
@@ -343,7 +338,7 @@ this line to the above code
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c">{ <span style="color: #A3BE8C;">"Emacs"</span>,     <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">1</span> &lt;&lt; <span style="color: #B48EAD; font-weight: bold;">2</span>,            <span style="color: #B48EAD; font-weight: bold;">1</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> },
+<pre class="src src-c"><span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"Emacs"</span>,     <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD;">NULL</span>,       <span style="color: #B48EAD; font-weight: bold;">1</span> &lt;&lt; <span style="color: #B48EAD; font-weight: bold;">2</span>,            <span style="color: #B48EAD; font-weight: bold;">1</span>,           -<span style="color: #B48EAD; font-weight: bold;">1</span> <span style="color: #81A1C1;">}</span>, 
 </pre>
 </div>
 
@@ -358,9 +353,9 @@ at suckless.org
 </div>
 </div>
 
-<div id="outline-container-orgb4f5126" class="outline-4">
-<h4 id="orgb4f5126">Key bindings</h4>
-<div class="outline-text-4" id="text-orgb4f5126">
+<div id="outline-container-org1c1a76f" class="outline-4">
+<h4 id="org1c1a76f">Key bindings</h4>
+<div class="outline-text-4" id="text-org1c1a76f">
 <p>
 I will not cover key bindings because I use sxhkd for custom keybindings, but if
 you want to use dwm key damon or you just want to edit a few of the defaly a
@@ -381,9 +376,9 @@ section of this page.
 </div>
 </div>
 
-<div id="outline-container-orgb5cf78f" class="outline-3">
-<h3 id="orgb5cf78f">st</h3>
-<div class="outline-text-3" id="text-orgb5cf78f">
+<div id="outline-container-orga7f4b87" class="outline-3">
+<h3 id="orga7f4b87">st</h3>
+<div class="outline-text-3" id="text-orga7f4b87">
 <p>
 The simple Terminal is amazing, very fast and has the best font rendering
 (second only to Alacritty) in my opinion. but it lacks some basic
@@ -394,32 +389,32 @@ config.def.h file, remove the config.h file and recompile.
 </p>
 </div>
 
-<div id="outline-container-org12f3567" class="outline-4">
-<h4 id="org12f3567">Font and Padding</h4>
-<div class="outline-text-4" id="text-org12f3567">
+<div id="outline-container-org95df552" class="outline-4">
+<h4 id="org95df552">Font and Padding</h4>
+<div class="outline-text-4" id="text-org95df552">
 <p>
 To edit the font and the padding you&rsquo;ll have to edit line 8 and 9, to set
 the font to Hack and size to 14, and set padding to 8, you&rsquo;ll do the following
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c">    <span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">font</span> = <span style="color: #A3BE8C;">"Hack:pixelsize=14:antialias=true:autohint=true"</span>;
+<pre class="src src-c">    <span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">font</span> = <span style="color: #A3BE8C;">"Hack:pixelsize=14:antialias=true:autohint=true"</span>; 
     <span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">int</span> <span style="color: #d9c6d6;">borderpx</span> = <span style="color: #B48EAD; font-weight: bold;">8</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd6b145e" class="outline-4">
-<h4 id="orgd6b145e">Colorscheme</h4>
-<div class="outline-text-4" id="text-orgd6b145e">
+<div id="outline-container-orgb7570c6" class="outline-4">
+<h4 id="orgb7570c6">Colorscheme</h4>
+<div class="outline-text-4" id="text-orgb7570c6">
 <p>
 To change st&rsquo;s default colorscheme you&rsquo;ll have to edit Lines 86 to 112
 </p>
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #6f7787;">/* </span><span style="color: #6f7787;">Terminal colors (16 first used in escape sequence) </span><span style="color: #6f7787;">*/</span>
-     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">colorname</span>[] = {
+     <span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">colorname</span><span style="color: #81A1C1;">[]</span> = <span style="color: #81A1C1;">{</span>
         <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">8 normal colors </span><span style="color: #6f7787;">*/</span>
         <span style="color: #A3BE8C;">"black"</span>,
         <span style="color: #A3BE8C;">"red3"</span>,
@@ -440,30 +435,30 @@ To change st&rsquo;s default colorscheme you&rsquo;ll have to edit Lines 86 to 1
         <span style="color: #A3BE8C;">"cyan"</span>,
         <span style="color: #A3BE8C;">"white"</span>,
 
-        [<span style="color: #B48EAD; font-weight: bold;">255</span>] = <span style="color: #B48EAD; font-weight: bold;">0</span>,
+        <span style="color: #B48EAD;">[</span><span style="color: #B48EAD; font-weight: bold;">255</span><span style="color: #B48EAD;">]</span> = <span style="color: #B48EAD; font-weight: bold;">0</span>,
 
-        <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">more colors can be added after 255 to use with DefaultXX </span><span style="color: #6f7787;">*/</span>
+        <span style="color: #6f7787;">/* </span><span style="color: #6f7787;">more colors can be added after 255 to use with DefaultXX </span><span style="color: #6f7787;">*/</span> 
         <span style="color: #A3BE8C;">"#cccccc"</span>,
         <span style="color: #A3BE8C;">"#555555"</span>,
-     };
+     <span style="color: #81A1C1;">}</span>;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org9e85d1f" class="outline-4">
-<h4 id="org9e85d1f">Cursor Shape</h4>
-<div class="outline-text-4" id="text-org9e85d1f">
+<div id="outline-container-org0cadb61" class="outline-4">
+<h4 id="org0cadb61">Cursor Shape</h4>
+<div class="outline-text-4" id="text-org0cadb61">
 <p>
 St have four cursor shapes defined by default:
 </p>
 
 <div class="org-src-container">
 <pre class="src src-c">  * Default shape of cursor
-      * <span style="color: #B48EAD; font-weight: bold;">2</span>: Block (<span style="color: #A3BE8C;">"&#9608;"</span>)
-      * <span style="color: #B48EAD; font-weight: bold;">4</span>: Underline (<span style="color: #A3BE8C;">"_"</span>)
-      * <span style="color: #B48EAD; font-weight: bold;">6</span>: Bar (<span style="color: #A3BE8C;">"|"</span>)
-      * <span style="color: #B48EAD; font-weight: bold;">7</span>: Snowman (<span style="color: #A3BE8C;">"&#9731;"</span>)
+      * <span style="color: #B48EAD; font-weight: bold;">2</span>: Block <span style="color: #81A1C1;">(</span><span style="color: #A3BE8C;">"&#9608;"</span><span style="color: #81A1C1;">)</span>
+      * <span style="color: #B48EAD; font-weight: bold;">4</span>: Underline <span style="color: #81A1C1;">(</span><span style="color: #A3BE8C;">"_"</span><span style="color: #81A1C1;">)</span>
+      * <span style="color: #B48EAD; font-weight: bold;">6</span>: Bar <span style="color: #81A1C1;">(</span><span style="color: #A3BE8C;">"|"</span><span style="color: #81A1C1;">)</span>
+      * <span style="color: #B48EAD; font-weight: bold;">7</span>: Snowman <span style="color: #81A1C1;">(</span><span style="color: #A3BE8C;">"&#9731;"</span><span style="color: #81A1C1;">)</span>
 </pre>
 </div>
 
@@ -473,7 +468,7 @@ the number corsponding to the shape you want.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">unsigned</span> <span style="color: #8FBCBB;">int</span> <span style="color: #d9c6d6;">cursorshape</span> = <span style="color: #B48EAD; font-weight: bold;">2</span>;
+<pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #8FBCBB;">unsigned</span> <span style="color: #8FBCBB;">int</span> <span style="color: #d9c6d6;">cursorshape</span> = <span style="color: #B48EAD; font-weight: bold;">2</span>; 
 </pre>
 </div>
 
@@ -485,9 +480,9 @@ pleasing to look it.
 </div>
 </div>
 
-<div id="outline-container-org44bc6ac" class="outline-3">
-<h3 id="org44bc6ac">dmenu</h3>
-<div class="outline-text-3" id="text-org44bc6ac">
+<div id="outline-container-orgfa785f6" class="outline-3">
+<h3 id="orgfa785f6">dmenu</h3>
+<div class="outline-text-3" id="text-orgfa785f6">
 <p>
 You costumize dmenu the same way you did st and dwm, by editing the
 config.def.h, removing config.h and recompiling.
@@ -502,8 +497,8 @@ extensable though scripting.
 </div>
 
 <ul class="org-ul">
-<li><a id="orge01d74b"></a>Note, please remember that if you want to use your own build of dmenu, you&rsquo;ll<br />
-<div class="outline-text-5" id="text-orge01d74b">
+<li><a id="orgec68f70"></a>Note, please remember that if you want to use your own build of dmenu, you&rsquo;ll<br />
+<div class="outline-text-5" id="text-orgec68f70">
 <p>
 have to remove some things from dwm, the things to be removed from config.def.h
 of dwm are the folowing
@@ -513,17 +508,17 @@ of dwm are the folowing
 In line 59, everyhting between &lt;&gt; should be removed
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">dmenucmd</span>[] = { <span style="color: #A3BE8C;">"dmenu_run"</span>, <span style="color: #A3BE8C;">"-m"</span>, dmenumon, &lt;<span style="color: #A3BE8C;">"-fn"</span>, dmenufont, <span style="color: #A3BE8C;">"-nb"</span>, col_gray1,
-                                  <span style="color: #A3BE8C;">"-nf"</span>, col_gray3, <span style="color: #A3BE8C;">"-sb"</span>, col_cyan, <span style="color: #A3BE8C;">"-sf"</span>, col_gray4,&gt; <span style="color: #B48EAD;">NULL</span> };
+<pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">dmenucmd</span><span style="color: #81A1C1;">[]</span> = <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"dmenu_run"</span>, <span style="color: #A3BE8C;">"-m"</span>, dmenumon, &lt;<span style="color: #A3BE8C;">"-fn"</span>, dmenufont, <span style="color: #A3BE8C;">"-nb"</span>, col_gray1, 
+                                  <span style="color: #A3BE8C;">"-nf"</span>, col_gray3, <span style="color: #A3BE8C;">"-sb"</span>, col_cyan, <span style="color: #A3BE8C;">"-sf"</span>, col_gray4,&gt; <span style="color: #B48EAD;">NULL</span> <span style="color: #81A1C1;">}</span>;
 </pre>
 </div>
 </div>
 </li>
 </ul>
 
-<div id="outline-container-org9f1e09e" class="outline-4">
-<h4 id="org9f1e09e">Font and colorscheme</h4>
-<div class="outline-text-4" id="text-org9f1e09e">
+<div id="outline-container-org4b7ae9e" class="outline-4">
+<h4 id="org4b7ae9e">Font and colorscheme</h4>
+<div class="outline-text-4" id="text-org4b7ae9e">
 <p>
 to change the font on dmenu you should edit line 7 and set it to the font you
 want
@@ -541,9 +536,9 @@ inside the *colors cosntant directly.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c">        [SchemeNorm] = { <span style="color: #A3BE8C;">"#bbbbbb"</span>, <span style="color: #A3BE8C;">"#222222"</span> },
-        [SchemeSel] = { <span style="color: #A3BE8C;">"#eeeeee"</span>, <span style="color: #A3BE8C;">"#005577"</span> },
-        [SchemeOut] = { <span style="color: #A3BE8C;">"#000000"</span>, <span style="color: #A3BE8C;">"#00ffff"</span> },
+<pre class="src src-c">        <span style="color: #81A1C1;">[</span>SchemeNorm<span style="color: #81A1C1;">]</span> = <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"#bbbbbb"</span>, <span style="color: #A3BE8C;">"#222222"</span> <span style="color: #81A1C1;">}</span>, 
+        <span style="color: #81A1C1;">[</span>SchemeSel<span style="color: #81A1C1;">]</span> = <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"#eeeeee"</span>, <span style="color: #A3BE8C;">"#005577"</span> <span style="color: #81A1C1;">}</span>,
+        <span style="color: #81A1C1;">[</span>SchemeOut<span style="color: #81A1C1;">]</span> = <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"#000000"</span>, <span style="color: #A3BE8C;">"#00ffff"</span> <span style="color: #81A1C1;">}</span>,
 </pre>
 </div>
 
@@ -562,9 +557,9 @@ Smith&rsquo;s</a> video on it.
 </div>
 
 
-<div id="outline-container-orge0e815b" class="outline-2">
-<h2 id="orge0e815b">Patching</h2>
-<div class="outline-text-2" id="text-orge0e815b">
+<div id="outline-container-org792b58c" class="outline-2">
+<h2 id="org792b58c">Patching</h2>
+<div class="outline-text-2" id="text-org792b58c">
 <p>
 Patching is how you extend the suckless tools with features they lack out of
 the box that either make them more usuable or enhance the look and feel of them,
@@ -640,9 +635,9 @@ suckless.org and you can also watch DistroTube&rsquo;s video on <a href="https:h
 </div>
 </div>
 
-<div id="outline-container-org1c97e05" class="outline-2">
-<h2 id="org1c97e05">Backup</h2>
-<div class="outline-text-2" id="text-org1c97e05">
+<div id="outline-container-orgde39a53" class="outline-2">
+<h2 id="orgde39a53">Backup</h2>
+<div class="outline-text-2" id="text-orgde39a53">
 <p>
 If you cutmized any of the suckless tools to your liking, then you know it
 is not as easy as editing a config file. espessially after you patch them. So
@@ -669,7 +664,7 @@ repository&rsquo;s url and do
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> add remote origin &lt;the repository<span style="color: #A3BE8C;">'s url&gt;</span>
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> add remote origin &lt;the repository<span style="color: #A3BE8C;">'s url&gt; </span>
 </pre>
 </div>
 
@@ -702,13 +697,8 @@ that programs directory, and run the follwoing
 <pre class="src src-shell"><span style="color: #8FBCBB;">git</span> pull upstream master
 </pre>
 </div>
-</div>
-</div>
 
 
-<div id="outline-container-org1a56d84" class="outline-2">
-<h2 id="org1a56d84">Conclusion</h2>
-<div class="outline-text-2" id="text-org1a56d84">
 <p>
 I think by now you can get around using the suckless tools with ease, custmize
 them and back them up. which is really amazing because the suckless tools are
@@ -726,10 +716,9 @@ I really hope that you enjoyed this read and that it was usefull to you.
 </div>
 </div>
 </div>
-</div>
 <div id="postamble" class="status">
 <p class="author">Author: Ronnie Nissan</p>
-<p class="date">Created: 2020-04-08 Wed 02:53</p>
+<p class="date">Created: 2020-04-09 Thu 23:24</p>
 </div>
 </body>
 </html>
