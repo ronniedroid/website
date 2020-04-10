@@ -1,23 +1,28 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
 #+OPTIONS: html-style:nil
-#+TITLE: How to Install, Manage, backup and use suckless tools
-#+AuTHOR: Ronnie Nissan
+#+AUTHOR: Ronnie Nissan
 #+OPTIONS: num:nil
 #+OPTIONS: toc:1
+
+#+HTML: <div class="main-contents">
+
+#+BEGIN_EXPORT html
+<h1 class="title">How to Install, Manage, backup and use suckless tools</h1>
+#+END_EXport
 
 * Introducation
 
 The suckless tools, especially dwm, st and dmenu, are some very amazing pieces
-of software, that allow a great flixability while being very minimal. But they
-come at a cost, yes, libre software is free as both in freedom and as in beer
+of software, that allow a great flexibility while being very minimal. But they
+come at a cost, yes, Libra software is free as both in freedom and as in beer
 (most) of time), but you should make an effort to be able to use it, and that effort
 (cost) is much needed when it comes to the sucklees tools.
 
 I used dwm, st and dmenu about a year ago, but I had no idea how to manage and
 backup them, I didn't know alot about customizing (patching) them, but recently
-I started learining C programing language, and so I decided to use all three, as
+I started learning C programming language, and so I decided to use all three, as
 I will have to edit the source code to make any changes and so this will help me
-in my endavor of learning C.
+in my endeavor of learning C.
 
 The resone I am making this toturial is to help you get started with using dwm,
 st and dmenu too. This tuturial is my own personal experiencve and knowledge and
@@ -111,7 +116,7 @@ make
 sudo make install
 #+end_src
 
-now dmenu is installed on on your system, in dwm, alt + p is binded to launching
+now dmenu is installed on your system, in dwm, alt + p is binded to launching
 dmenu.
 
 * configuration
@@ -120,7 +125,16 @@ by now you should have a working (in the suckless philosophy way) system, but
 maybe you want to edit some colors, add some features through patching those
 programs to make them even more usable, or just more pleasing to look at.
 
-****  NOTE: it is recommended that you make a copy of config.def.h file and name it config.h and make your edits to this file, so that when you update dwm for example you get the new config.def.h it will not overwrite your modefications, whoever I don't do that, I edit config.def.h and config.h is generated automatically when you compile and install. this way when a patch edited config.def.h, I can just delete config.h and recompile.
+#+BEGIN_EXPORT HTML
+<div class="note">
+    <p><strong>Note! </strong>it is recommended that you make a copy of
+config.def.h file and name it config.h and make your edits to this file, so that
+when you update dwm for example you get the new config.def.h it will not
+overwrite your modefications, whoever I don't do that, I edit config.def.h and
+config.h is generated automatically when you compile and install. this way when
+a patch edited config.def.h, I can just delete config.h and recompile</p>
+</div>
+#+END_EXPORT
 
 ** dwm
 
@@ -199,7 +213,7 @@ this line to the above code
 
 which tarnsaltes to 000000100.
 
-If you want to learn more about tag masks, check [[https:https://dwm.suckless.org/customisation/tagmask/][How does a tag-mask work?]] over
+If you want to learn more about tag masks, check [[https://dwm.suckless.org/customisation/tagmask/][How does a tag-mask work?]] over
 at suckless.org
 
 *** Key bindings
@@ -301,11 +315,13 @@ use it to set my wallapper, change my monitor layout, as a powermenu etc. You
 can pipe things into dmenu and paste the output to stdout. which makes it very
 extensable though scripting.
 
-**** Note, please remember that if you want to use your own build of dmenu, you'll
-have to remove some things from dwm, the things to be removed from config.def.h
-of dwm are the folowing
+#+BEGIN_EXPORT HTML
+<div class="note">
+    <p><srtong>Note! </strong>please remember that if you want to use your own build of dmenu, you'll have to remove some things from dwm, the things to be removed from config.def.h of dwm are the folowing; In line 59, everyhting between <> should be removed</p>
+</div>
+#+END_EXPORT
 
-In line 59, everyhting between <> should be removed
+
 #+begin_src c
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, <"-fn", dmenufont, "-nb", col_gray1, 
                                   "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4,> NULL };
@@ -333,7 +349,7 @@ inside the *colors cosntant directly.
 first one is the foreground and the second one is the background.
 first line is for the Normal enteries and second line for the selected enteries.
 
-If you want to watch a good video about dmenu, I recommed that you watching [[https:https://www.youtube.com/watch?v=R9m723tAurA][Luke
+If you want to watch a good video about dmenu, I recommed that you watching [[https://www.youtube.com/watch?v=R9m723tAurA][Luke
 Smith's]] video on it.
 
 
@@ -387,8 +403,8 @@ if you want to remove a patch you've applied you haev to does
 patch -R < <name of the patch>.def
 #+end_src
 
-If you want to learn more about patches check out the [[https:https://suckless.org/hacking/][Hacking]] page from
-suckless.org and you can also watch DistroTube's video on [[https:https://www.youtube.com/watch?v=bBJ0qxqzlxk][Patching dmenu]].
+If you want to learn more about patches check out the [[https://suckless.org/hacking/][Hacking]] page from
+suckless.org and you can also watch DistroTube's video on [[https://www.youtube.com/watch?v=bBJ0qxqzlxk][Patching dmenu]].
 
 * Backup
 
@@ -444,3 +460,5 @@ Later I'll be posting more articles explaining how to coustmize dwm's bar and
 how to use sxhkd as your key damon.
 
 I really hope that you enjoyed this read and that it was usefull to you.
+
+#+HTML: </div>

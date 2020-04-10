@@ -2,9 +2,13 @@
 <head>
 <style>
 
-#main_wrap {
-  width: 500px;
+#content {
+  width: 100%;
   margin: 0 auto; 
+}
+
+.title {
+  text-align: center;
 }
 
 #table-of-contents {
@@ -19,9 +23,12 @@
   width: 100%;
   background-color: #2e3440;
   color: #eceff4; 
+  padding: 8px 16px;
 }
 
-#content {
+
+
+.main-contents {
   float: left;
   width: 70%;
   background: #eceff4;
@@ -34,26 +41,26 @@ ul {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #f1f1f1;
+  background-color: #2e3440;
   text-align:center;
 }
 
 li a {
   display: block;
-  color: #000;
+  color: #eceff4;
   padding: 8px 16px;
   text-decoration: none;
   text-align:center;
 }
 
 li a:hover {
-  background-color: #555;
-  color: white;
+  background-color: #8fbcbb;
+  color: #eceff4;
 }
 
 .active {
-  background-color: red;
-  color: white;
+  background-color: #8fbcbb;
+  color: #eceff4;
 }
 
 pre.src {
@@ -63,7 +70,7 @@ pre.src {
 }
 
 .table {
-  color: #5e81ac;
+  color: #8fbcbb;
   text-align:center;
 }
 
@@ -73,19 +80,23 @@ pre.src {
   overflow-x: auto;
   white-space: nowrap;
   padding: 8px 16px;
-  text-align:center;
+  border-left: 6px solid #5e81ac;
 }
 
-.org-ul {
-  background-color: white;
-  text-align: left;
+.note {
+  background-color: #2e3440;
+  width: 90%;
+  color: #eceff4;
+  border-left: 6px solid #bf616a;
+  padding: 8px 16px;
 }
+
 
 @media screen and (max-width: 800px) {
-  #table-of-contents, #content, #postamble {
+  #table-of-contents, .main-contents, #postamble {
   width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
-  .org-src-container {
+  .org-src-container, .note {
   width: 24em;
   padding: 8px 16px;
   }

@@ -4,10 +4,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-09 Thu 23:24 -->
+<!-- 2020-04-10 Fri 15:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>How to Install, Manage, backup and use suckless tools</title>
+<title>&lrm;</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Ronnie Nissan" />
 <link rel="stylesheet" type="text/css" href="style.css" />
@@ -38,27 +38,29 @@
 </head>
 <body>
 <div id="content">
-<h1 class="title">How to Install, Manage, backup and use suckless tools</h1>
 <div id="table-of-contents">
-<h2>Table of Contents</h2>
+<h2 class="table">Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org47ffebc">Introducation</a></li>
-<li><a href="#org5d5a66e">Installation</a></li>
-<li><a href="#orgfcb0133">configuration</a></li>
-<li><a href="#org792b58c">Patching</a></li>
-<li><a href="#orgde39a53">Backup</a></li>
+<li><a href="#orgb013f64">Introducation</a></li>
+<li><a href="#orge558f45">Installation</a></li>
+<li><a href="#org52cc4fe">configuration</a></li>
+<li><a href="#org699e062">Patching</a></li>
+<li><a href="#orga536b13">Backup</a></li>
 </ul>
 </div>
 </div>
+<div class="main-contents">
 
-<div id="outline-container-org47ffebc" class="outline-2">
-<h2 id="org47ffebc">Introducation</h2>
-<div class="outline-text-2" id="text-org47ffebc">
+<h1 class="title">How to Install, Manage, backup and use suckless tools</h1>
+
+<div id="outline-container-orgb013f64" class="outline-2">
+<h2 id="orgb013f64">Introducation</h2>
+<div class="outline-text-2" id="text-orgb013f64">
 <p>
 The suckless tools, especially dwm, st and dmenu, are some very amazing pieces
-of software, that allow a great flixability while being very minimal. But they
-come at a cost, yes, libre software is free as both in freedom and as in beer
+of software, that allow a great flexibility while being very minimal. But they
+come at a cost, yes, Libra software is free as both in freedom and as in beer
 (most) of time), but you should make an effort to be able to use it, and that effort
 (cost) is much needed when it comes to the sucklees tools.
 </p>
@@ -66,9 +68,9 @@ come at a cost, yes, libre software is free as both in freedom and as in beer
 <p>
 I used dwm, st and dmenu about a year ago, but I had no idea how to manage and
 backup them, I didn&rsquo;t know alot about customizing (patching) them, but recently
-I started learining C programing language, and so I decided to use all three, as
+I started learning C programming language, and so I decided to use all three, as
 I will have to edit the source code to make any changes and so this will help me
-in my endavor of learning C.
+in my endeavor of learning C.
 </p>
 
 <p>
@@ -89,9 +91,9 @@ Hope you&rsquo;ll enjoy it and learn something from it.
 </div>
 </div>
 
-<div id="outline-container-org5d5a66e" class="outline-2">
-<h2 id="org5d5a66e">Installation</h2>
-<div class="outline-text-2" id="text-org5d5a66e">
+<div id="outline-container-orge558f45" class="outline-2">
+<h2 id="orge558f45">Installation</h2>
+<div class="outline-text-2" id="text-orge558f45">
 <p>
 to install any of the above three, you&rsquo;ll need to have a few libraries and git installed in your system, you
 can install them with
@@ -126,9 +128,9 @@ and on Arch and arch based distroes
 </div>
 
 
-<div id="outline-container-org53f5a72" class="outline-3">
-<h3 id="org53f5a72">dwm</h3>
-<div class="outline-text-3" id="text-org53f5a72">
+<div id="outline-container-org9d0c98a" class="outline-3">
+<h3 id="org9d0c98a">dwm</h3>
+<div class="outline-text-3" id="text-org9d0c98a">
 <p>
 Clone dwm from suckless.org
 </p>
@@ -166,9 +168,9 @@ intended it.
 </div>
 
 
-<div id="outline-container-orgdd43e33" class="outline-3">
-<h3 id="orgdd43e33">st</h3>
-<div class="outline-text-3" id="text-orgdd43e33">
+<div id="outline-container-orgba2fb56" class="outline-3">
+<h3 id="orgba2fb56">st</h3>
+<div class="outline-text-3" id="text-orgba2fb56">
 <p>
 clone st from suckless.org
 </p>
@@ -194,9 +196,9 @@ Return.
 </div>
 </div>
 
-<div id="outline-container-org6237206" class="outline-3">
-<h3 id="org6237206">dmenu</h3>
-<div class="outline-text-3" id="text-org6237206">
+<div id="outline-container-orge6b72ca" class="outline-3">
+<h3 id="orge6b72ca">dmenu</h3>
+<div class="outline-text-3" id="text-orge6b72ca">
 <p>
 clone dmenu from suckless.org
 </p>
@@ -214,30 +216,35 @@ clone dmenu from suckless.org
 </div>
 
 <p>
-now dmenu is installed on on your system, in dwm, alt + p is binded to launching
+now dmenu is installed on your system, in dwm, alt + p is binded to launching
 dmenu.
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfcb0133" class="outline-2">
-<h2 id="orgfcb0133">configuration</h2>
-<div class="outline-text-2" id="text-orgfcb0133">
+<div id="outline-container-org52cc4fe" class="outline-2">
+<h2 id="org52cc4fe">configuration</h2>
+<div class="outline-text-2" id="text-org52cc4fe">
 <p>
 by now you should have a working (in the suckless philosophy way) system, but
 maybe you want to edit some colors, add some features through patching those
 programs to make them even more usable, or just more pleasing to look at.
 </p>
+
+<div class="note">
+    <p><strong>Note! </strong>it is recommended that you make a copy of
+config.def.h file and name it config.h and make your edits to this file, so that
+when you update dwm for example you get the new config.def.h it will not
+overwrite your modefications, whoever I don't do that, I edit config.def.h and
+config.h is generated automatically when you compile and install. this way when
+a patch edited config.def.h, I can just delete config.h and recompile</p>
+</div>
 </div>
 
-<ul class="org-ul">
-<li><a id="org04b3053"></a>NOTE: it is recommended that you make a copy of config.def.h file and name it config.h and make your edits to this file, so that when you update dwm for example you get the new config.def.h it will not overwrite your modefications, whoever I don&rsquo;t do that, I edit config.def.h and config.h is generated automatically when you compile and install. this way when a patch edited config.def.h, I can just delete config.h and recompile.<br /></li>
-</ul>
-
-<div id="outline-container-orga69a8c7" class="outline-3">
-<h3 id="orga69a8c7">dwm</h3>
-<div class="outline-text-3" id="text-orga69a8c7">
+<div id="outline-container-org53bfe14" class="outline-3">
+<h3 id="org53bfe14">dwm</h3>
+<div class="outline-text-3" id="text-org53bfe14">
 <p>
 to edit dwm, you&rsquo;ll have to cd into the dwm directory and edit config.def.h,
 remember to remove the config.h file before recompiling (see
@@ -245,9 +252,9 @@ note above). and here I&rsquo;ll explain some parts of the config file.
 </p>
 </div>
 
-<div id="outline-container-orgd4f7577" class="outline-4">
-<h4 id="orgd4f7577">Font and Colorscheme</h4>
-<div class="outline-text-4" id="text-orgd4f7577">
+<div id="outline-container-org96a30c8" class="outline-4">
+<h4 id="org96a30c8">Font and Colorscheme</h4>
+<div class="outline-text-4" id="text-org96a30c8">
 <p>
 In lines 8 and 9 you can set the font, and font size of dwm, and also dmenu if
 you don&rsquo;t want to edit your dmenu instalation and launch it though the dwm
@@ -293,9 +300,9 @@ changes.
 </div>
 </div>
 
-<div id="outline-container-org56015f7" class="outline-4">
-<h4 id="org56015f7">The rules</h4>
-<div class="outline-text-4" id="text-org56015f7">
+<div id="outline-container-orgab381cc" class="outline-4">
+<h4 id="orgab381cc">The rules</h4>
+<div class="outline-text-4" id="text-orgab381cc">
 <p>
 from line 30 to 31 you&rsquo;ll see some rules set for gimp and firefox
 </p>
@@ -347,15 +354,15 @@ which tarnsaltes to 000000100.
 </p>
 
 <p>
-If you want to learn more about tag masks, check <a href="https:https://dwm.suckless.org/customisation/tagmask/">How does a tag-mask work?</a> over
+If you want to learn more about tag masks, check <a href="https://dwm.suckless.org/customisation/tagmask/">How does a tag-mask work?</a> over
 at suckless.org
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1c1a76f" class="outline-4">
-<h4 id="org1c1a76f">Key bindings</h4>
-<div class="outline-text-4" id="text-org1c1a76f">
+<div id="outline-container-org84af5ba" class="outline-4">
+<h4 id="org84af5ba">Key bindings</h4>
+<div class="outline-text-4" id="text-org84af5ba">
 <p>
 I will not cover key bindings because I use sxhkd for custom keybindings, but if
 you want to use dwm key damon or you just want to edit a few of the defaly a
@@ -376,9 +383,9 @@ section of this page.
 </div>
 </div>
 
-<div id="outline-container-orga7f4b87" class="outline-3">
-<h3 id="orga7f4b87">st</h3>
-<div class="outline-text-3" id="text-orga7f4b87">
+<div id="outline-container-org6bb8202" class="outline-3">
+<h3 id="org6bb8202">st</h3>
+<div class="outline-text-3" id="text-org6bb8202">
 <p>
 The simple Terminal is amazing, very fast and has the best font rendering
 (second only to Alacritty) in my opinion. but it lacks some basic
@@ -389,9 +396,9 @@ config.def.h file, remove the config.h file and recompile.
 </p>
 </div>
 
-<div id="outline-container-org95df552" class="outline-4">
-<h4 id="org95df552">Font and Padding</h4>
-<div class="outline-text-4" id="text-org95df552">
+<div id="outline-container-orgda1134b" class="outline-4">
+<h4 id="orgda1134b">Font and Padding</h4>
+<div class="outline-text-4" id="text-orgda1134b">
 <p>
 To edit the font and the padding you&rsquo;ll have to edit line 8 and 9, to set
 the font to Hack and size to 14, and set padding to 8, you&rsquo;ll do the following
@@ -405,9 +412,9 @@ the font to Hack and size to 14, and set padding to 8, you&rsquo;ll do the follo
 </div>
 </div>
 
-<div id="outline-container-orgb7570c6" class="outline-4">
-<h4 id="orgb7570c6">Colorscheme</h4>
-<div class="outline-text-4" id="text-orgb7570c6">
+<div id="outline-container-orgbfd16fc" class="outline-4">
+<h4 id="orgbfd16fc">Colorscheme</h4>
+<div class="outline-text-4" id="text-orgbfd16fc">
 <p>
 To change st&rsquo;s default colorscheme you&rsquo;ll have to edit Lines 86 to 112
 </p>
@@ -446,9 +453,9 @@ To change st&rsquo;s default colorscheme you&rsquo;ll have to edit Lines 86 to 1
 </div>
 </div>
 
-<div id="outline-container-org0cadb61" class="outline-4">
-<h4 id="org0cadb61">Cursor Shape</h4>
-<div class="outline-text-4" id="text-org0cadb61">
+<div id="outline-container-orge7ae34b" class="outline-4">
+<h4 id="orge7ae34b">Cursor Shape</h4>
+<div class="outline-text-4" id="text-orge7ae34b">
 <p>
 St have four cursor shapes defined by default:
 </p>
@@ -480,9 +487,9 @@ pleasing to look it.
 </div>
 </div>
 
-<div id="outline-container-orgfa785f6" class="outline-3">
-<h3 id="orgfa785f6">dmenu</h3>
-<div class="outline-text-3" id="text-orgfa785f6">
+<div id="outline-container-org1957524" class="outline-3">
+<h3 id="org1957524">dmenu</h3>
+<div class="outline-text-3" id="text-org1957524">
 <p>
 You costumize dmenu the same way you did st and dwm, by editing the
 config.def.h, removing config.h and recompiling.
@@ -494,31 +501,22 @@ use it to set my wallapper, change my monitor layout, as a powermenu etc. You
 can pipe things into dmenu and paste the output to stdout. which makes it very
 extensable though scripting.
 </p>
+
+<div class="note">
+    <p><srtong>Note! </strong>please remember that if you want to use your own build of dmenu, you'll have to remove some things from dwm, the things to be removed from config.def.h of dwm are the folowing; In line 59, everyhting between <> should be removed</p>
 </div>
 
-<ul class="org-ul">
-<li><a id="orgec68f70"></a>Note, please remember that if you want to use your own build of dmenu, you&rsquo;ll<br />
-<div class="outline-text-5" id="text-orgec68f70">
-<p>
-have to remove some things from dwm, the things to be removed from config.def.h
-of dwm are the folowing
-</p>
 
-<p>
-In line 59, everyhting between &lt;&gt; should be removed
-</p>
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #81A1C1;">static</span> <span style="color: #81A1C1;">const</span> <span style="color: #8FBCBB;">char</span> *<span style="color: #d9c6d6;">dmenucmd</span><span style="color: #81A1C1;">[]</span> = <span style="color: #81A1C1;">{</span> <span style="color: #A3BE8C;">"dmenu_run"</span>, <span style="color: #A3BE8C;">"-m"</span>, dmenumon, &lt;<span style="color: #A3BE8C;">"-fn"</span>, dmenufont, <span style="color: #A3BE8C;">"-nb"</span>, col_gray1, 
                                   <span style="color: #A3BE8C;">"-nf"</span>, col_gray3, <span style="color: #A3BE8C;">"-sb"</span>, col_cyan, <span style="color: #A3BE8C;">"-sf"</span>, col_gray4,&gt; <span style="color: #B48EAD;">NULL</span> <span style="color: #81A1C1;">}</span>;
 </pre>
 </div>
 </div>
-</li>
-</ul>
 
-<div id="outline-container-org4b7ae9e" class="outline-4">
-<h4 id="org4b7ae9e">Font and colorscheme</h4>
-<div class="outline-text-4" id="text-org4b7ae9e">
+<div id="outline-container-org2486981" class="outline-4">
+<h4 id="org2486981">Font and colorscheme</h4>
+<div class="outline-text-4" id="text-org2486981">
 <p>
 to change the font on dmenu you should edit line 7 and set it to the font you
 want
@@ -548,7 +546,7 @@ first line is for the Normal enteries and second line for the selected enteries.
 </p>
 
 <p>
-If you want to watch a good video about dmenu, I recommed that you watching <a href="https:https://www.youtube.com/watch?v=R9m723tAurA">Luke
+If you want to watch a good video about dmenu, I recommed that you watching <a href="https://www.youtube.com/watch?v=R9m723tAurA">Luke
 Smith&rsquo;s</a> video on it.
 </p>
 </div>
@@ -557,9 +555,9 @@ Smith&rsquo;s</a> video on it.
 </div>
 
 
-<div id="outline-container-org792b58c" class="outline-2">
-<h2 id="org792b58c">Patching</h2>
-<div class="outline-text-2" id="text-org792b58c">
+<div id="outline-container-org699e062" class="outline-2">
+<h2 id="org699e062">Patching</h2>
+<div class="outline-text-2" id="text-org699e062">
 <p>
 Patching is how you extend the suckless tools with features they lack out of
 the box that either make them more usuable or enhance the look and feel of them,
@@ -629,15 +627,15 @@ if you want to remove a patch you&rsquo;ve applied you haev to does
 </div>
 
 <p>
-If you want to learn more about patches check out the <a href="https:https://suckless.org/hacking/">Hacking</a> page from
-suckless.org and you can also watch DistroTube&rsquo;s video on <a href="https:https://www.youtube.com/watch?v=bBJ0qxqzlxk">Patching dmenu</a>.
+If you want to learn more about patches check out the <a href="https://suckless.org/hacking/">Hacking</a> page from
+suckless.org and you can also watch DistroTube&rsquo;s video on <a href="https://www.youtube.com/watch?v=bBJ0qxqzlxk">Patching dmenu</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgde39a53" class="outline-2">
-<h2 id="orgde39a53">Backup</h2>
-<div class="outline-text-2" id="text-orgde39a53">
+<div id="outline-container-orga536b13" class="outline-2">
+<h2 id="orga536b13">Backup</h2>
+<div class="outline-text-2" id="text-orga536b13">
 <p>
 If you cutmized any of the suckless tools to your liking, then you know it
 is not as easy as editing a config file. espessially after you patch them. So
@@ -664,7 +662,7 @@ repository&rsquo;s url and do
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> add remote origin &lt;the repository<span style="color: #A3BE8C;">'s url&gt; </span>
+<pre class="src src-shell"><span style="color: #8FBCBB;">git</span> add remote origin &lt;the repository<span style="color: #A3BE8C;">'s url&gt;</span>
 </pre>
 </div>
 
@@ -713,12 +711,14 @@ how to use sxhkd as your key damon.
 <p>
 I really hope that you enjoyed this read and that it was usefull to you.
 </p>
+
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Ronnie Nissan</p>
-<p class="date">Created: 2020-04-09 Thu 23:24</p>
+<p class="date">Created: 2020-04-10 Fri 15:30</p>
 </div>
 </body>
 </html>
